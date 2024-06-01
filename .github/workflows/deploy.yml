@@ -27,7 +27,8 @@ on:
       TELEGRAM_HASH:
         description: 'Telegram HASH from https://my.telegram.org/'
         required: true
-      HEROKU_TEAM_NAME: 'Optionally Add Your Team Name'
+      HEROKU_TEAM_NAME:
+        description: 'Optionally Add Your Team Name'
         required: false
         
 jobs:
@@ -50,6 +51,7 @@ jobs:
           stack: "container"
           region: "eu"
           team: ${{inputs.HEROKU_TEAM_NAME}}
+          
         env:
           HD_OWNER_ID: ${{inputs.OWNER_ID}}
           HD_TELEGRAM_API: ${{inputs.TELEGRAM_API}}
